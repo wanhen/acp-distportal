@@ -1,0 +1,52 @@
+<!-- Dashboard Core -->
+    <link href="{{ url('/') }}/themes-tabler/assets/css/dashboard.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/js/dashboard.js"></script>
+    
+    <!-- fullcalendar Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/fullcalendar/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/fullcalendar/plugin.js"></script>
+    
+    <!-- DataTables Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/datatables/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/datatables/plugin.js"></script>
+
+    <!-- Jquery-ui Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/jquery-ui-1.12.1.custom/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/jquery-ui-1.12.1.custom/plugin.js"></script>
+
+    <!-- Jexcel Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/jexcel/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/jexcel/plugin.js"></script>
+
+    <!-- Select2 Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/select2-4.0.5/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/select2-4.0.5/plugin.js"></script>
+
+    <!-- Chart-c3 Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/charts-c3/plugin.js"></script>
+
+    <!-- jsgrid Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/jsgrid-1.5.3/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/jsgrid-1.5.3/plugin.js"></script>
+
+    <!-- iziModal Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/iziModal/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/iziModal/plugin.js"></script>
+    
+    <!-- jquery-validation Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/jquery-validation-1.17.0/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/jquery-validation-1.17.0/plugin.js"></script>
+    
+    <!-- easyweek-picker Plugin -->
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/easyweek-picker/plugin.js"></script>
+
+    <!-- chartjs Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/chartjs/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/chartjs/plugin.js"></script>
+    
+     <!-- bootstrap-table Plugin -->
+    <link href="{{ url('/') }}/themes-tabler/assets/plugins/bootstrap-table/plugin.css" rel="stylesheet" />
+    <script src="{{ url('/') }}/themes-tabler/assets/plugins/bootstrap-table/plugin.js"></script>
+
+

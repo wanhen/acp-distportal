@@ -1,0 +1,33 @@
+require.config({   
+    shim: {
+        'datatables': ['datatables.net-buttons','datatables.net-buttons-print','datatables.net-buttons-html5'],
+    },
+    paths: {
+        'datatables': 'assets/plugins/datatables/js/datatables.min',
+        'datatables.net-jszip': 'https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min',
+        'datatables.net-pdfmake': 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min',
+        'datatables.net-vfs_fonts': 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts',
+        'datatables.net': 'https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min',
+        'datatables.net-bs': 'https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min',
+        'datatables.net-autofill': 'https://cdn.datatables.net/autofill/2.3.0/js/dataTables.autoFill.min',
+        'datatables.net-autofill-bs': 'https://cdn.datatables.net/autofill/2.3.0/js/autoFill.bootstrap.min',
+        'datatables.net-buttons': 'https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min',
+        'datatables.net-buttons-bs': 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.bootstrap.min',
+        'datatables.net-buttons-colVis': 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min',
+        'datatables.net-buttons-flash': 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min',
+        'datatables.net-buttons-html5': 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min',
+        'datatables.net-buttons-print': 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min',
+        'datatables.colReorder': 'https://cdn.datatables.net/colreorder/1.5.0/js/dataTables.colReorder.min',
+        'datatables.net-fixedcolumns': 'https://cdn.datatables.net/fixedcolumns/3.2.5/js/dataTables.fixedColumns.min',
+        'datatables.net-fixedheader': 'https://cdn.datatables.net/fixedheader/3.1.4/js/dataTables.fixedHeader.min',
+        'datatables.keyTable': 'https://cdn.datatables.net/keytable/2.4.0/js/dataTables.keyTable.min',
+        'datatables.net-responsive': 'https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min',
+        'datatables.net-responsive-bs': 'https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap.min',
+        'datatables.net-rowGroup': 'https://cdn.datatables.net/rowgroup/1.0.3/js/dataTables.rowGroup.min',
+        'datatables.net-rowreorder': 'https://cdn.datatables.net/rowreorder/1.2.4/js/dataTables.rowReorder.min',
+        'datatables.net-scroller': 'https://cdn.datatables.net/scroller/1.5.0/js/dataTables.scroller.min',
+        'datatables.net-select': 'https://cdn.datatables.net/select/1.2.6/js/dataTables.select.min',       
+    },      
+});
+
+
