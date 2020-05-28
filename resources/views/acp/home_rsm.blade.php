@@ -65,119 +65,12 @@
                                 <h2 class="card-title">Penjualan per Brand</h2>
                             </div>
                             <canvas id="barChartBrand"></canvas>
-                            <!-- <table class="table card-table">
-                                <tr>
-                                <td>No #176677677</td>
-                                <td class="text-right">
-                                    <span class="badge badge-default">Rp. 769.000</span>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>No #176679887</td>
-                                <td class="text-right">
-                                    <span class="badge badge-success">Rp.20.000</span>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>No #986677677</td>
-                                <td class="text-right">
-                                    <span class="badge badge-danger">Rp.59.879.000</span>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>No #198998897</td>
-                                <td class="text-right">
-                                    <span class="badge badge-default">Rp.1.200.000</span>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>No #198998896</td>
-                                <td class="text-right">
-                                    <span class="badge badge-default">Rp.200.000</span>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>No #196798897</td>
-                                <td class="text-right">
-                                    <span class="badge badge-default">Rp.300.000</span>
-                                </td>
-                                </tr>
-                            </table> -->
+                            
                         </div>
                     </div>
 
                     <div class="col-12">
-                <!-- <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Daftar Laporan</h3>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table card-table table-vcenter text-nowrap">
-                      <thead>
-                        <tr>
-                          <th class="w-1">No.</th>
-                          <th>Periode</th>
-                          <th>Jenis Laporan</th>
-                          <th>Nama File</th>
-                          <th>Created</th>
-                          <th>Status</th>
-                          <th>Action</th>                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><span class="text-muted">1</span></td>
-                          <td><a href="invoice.html" class="text-inherit">2019-01</a></td>
-                          <td>
-                            STT
-                          </td>
-                          <td>
-                            87956621
-                          </td>
-                          <td>
-                            15 Dec 2017
-                          </td>
-                          <td>
-                            <span class="status-icon bg-success"></span> Success
-                          </td>
-                          
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          
-                        </tr>
-                        <tr>
-                          <td><span class="text-muted">1</span></td>
-                          <td><a href="invoice.html" class="text-inherit">2019-01</a></td>
-                          <td>
-                            STT
-                          </td>
-                          <td>
-                            87956621
-                          </td>
-                          <td>
-                            15 Dec 2017
-                          </td>
-                          <td>
-                            <span class="status-icon bg-warning"></span> Warning
-                          </td>
-                          
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          
-                        </tr>
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                </div> -->
+               
               </div>
 
                   </div>
