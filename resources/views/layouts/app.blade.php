@@ -81,15 +81,7 @@
                     </a>
                     <a class="dropdown-item" href="{{ url('/account/changepassword') }}">
                         <i class="dropdown-icon fe fe-settings"></i> Change Password
-                    </a>
-                    {{--
-                    <a class="dropdown-item" href="{{ url('/account/inbox') }}">
-                        <span class="float-right"><span class="badge badge-primary">6</span></span>
-                        <i class="dropdown-icon fe fe-mail"></i> Inbox
-                    </a>
-                    <a class="dropdown-item" href="{{ url('/account/message') }}">
-                        <i class="dropdown-icon fe fe-send"></i> Message
-                    </a> --}}
+                    </a>                   
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ url('/account/help') }}">
                         <i class="dropdown-icon fe fe-help-circle"></i> Bantuan?
@@ -124,8 +116,7 @@
                       <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'dist') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Master </a>
                       <div class="dropdown-menu dropdown-menu-arrow">
                         <a href="{{ url('/dist/customerlist') }}" class="dropdown-item ">Customer</a>
-                        <a href="{{ url('/dist/salesmanlist') }}" class="dropdown-item ">Salesman</a>
-                        <!-- <a href="{{ url('/dist/itemlist') }}" class="dropdown-item ">Item Mapping</a> -->
+                        <a href="{{ url('/dist/salesmanlist') }}" class="dropdown-item ">Salesman</a>                       
                       </div>
                     </li>                   
                     <li class="nav-item dropdown">
