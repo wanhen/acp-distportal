@@ -52,80 +52,7 @@
                      
               <div class="card-body">
 
-              <div class="row row-cards">
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <div class="card">
-                    <div class="card-body p-3 text-center">
-                      <div class="text-right text-green">
-                        6%
-                        <i class="fe fe-chevron-up"></i>
-                      </div>
-                      <div class="h1 m-0">300 - 257</div>
-                      <div class="text-muted mb-4">Register Outlet</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <div class="card">
-                    <div class="card-body p-3 text-center">
-                      <div class="text-right text-red">
-                        -3%
-                        <i class="fe fe-chevron-down"></i>
-                      </div>
-                      <div class="h1 m-0">17</div>
-                      <div class="text-muted mb-4">New Outlet Order</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <div class="card">
-                    <div class="card-body p-3 text-center">
-                      <div class="text-right text-green">
-                        9%
-                        <i class="fe fe-chevron-up"></i>
-                      </div>
-                      <div class="h1 m-0">7</div>
-                      <div class="text-muted mb-4">Stock Ratio</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <div class="card">
-                    <div class="card-body p-3 text-center">
-                      <div class="text-right text-green">
-                        3%
-                        <i class="fe fe-chevron-up"></i>
-                      </div>
-                      <div class="h1 m-0">27.3K</div>
-                      <div class="text-muted mb-4">Target Achievement</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <div class="card">
-                    <div class="card-body p-3 text-center">
-                      <div class="text-right text-red">
-                        -2%
-                        <i class="fe fe-chevron-down"></i>
-                      </div>
-                      <div class="h1 m-0">$95</div>
-                      <div class="text-muted mb-4">AR Outstanding</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                  <div class="card">
-                    <div class="card-body p-3 text-center">
-                      <div class="text-right text-red">
-                        -1%
-                        <i class="fe fe-chevron-down"></i>
-                      </div>
-                      <div class="h1 m-0">621</div>
-                      <div class="text-muted mb-4">Products</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
                 <div class="text-wrap p-lg-6">
 
@@ -156,26 +83,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
-
-                    <div class="card">
-                      <div class="card-header">
-                        <h3 class="card-title">Produk mendekati ED</h3>
-                      </div>
-                      <div class="card-body">
-                          <table data-toggle="table">
-                            <thead>
-                              <tr>
-                              </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                          </table>
-                      </div>
-                    </div>
-                    
-               
-                    </div>
+                   
 
                   </div>
                   

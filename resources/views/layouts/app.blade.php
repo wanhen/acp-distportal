@@ -112,37 +112,8 @@
                     </li>
 
                     @if (in_array('DISTRIBUTOR', explode(",",Session::get('usergroup'))) == true)
-                    <li class="nav-item dropdown">
-                      <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'dist') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Master </a>
-                      <div class="dropdown-menu dropdown-menu-arrow">
-                        <a href="{{ url('/dist/customerlist') }}" class="dropdown-item ">Customer</a>
-                        <a href="{{ url('/dist/salesmanlist') }}" class="dropdown-item ">Salesman</a>                       
-                      </div>
-                    </li>                   
-                    <li class="nav-item dropdown">
-                      <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'dataentry') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Data Entry </a>
-                      <div class="dropdown-menu dropdown-menu-arrow">
-                        <a href="{{ url('/dataentry/stttranslist') }}" class="dropdown-item ">Entry STT</a>
-                        <a href="{{ url('/dataentry/stoklist') }}" class="dropdown-item ">Entry Stok</a>
-                      </div>
-                    </li>
                     <li class="nav-item ">
                       <a href="{{ url('/upload/stt') }}" class="nav-link @if (Request::segment(1) == 'upload') active @endif"><i class="fe fe-arrow-up-circle"></i> Upload </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="javascript:void(0)" class="nav-link @if (Request::segment(2) == 'report') active @endif" data-toggle="dropdown"><i class="fe fe-book-open"></i> Laporan</a>
-                      <div class="dropdown-menu dropdown-menu-arrow">                        
-                        <a href="{{ url('/dist/report/salestarget') }}" class="dropdown-item ">Sales Target</a>
-                        <a href="{{ url('/dist/report/saleschannel') }}" class="dropdown-item ">Sales by Channel</a>
-                        <a href="{{ url('/dist/report/newopenoutlet') }}" class="dropdown-item ">Performance NOO</a>
-                        <a href="{{ url('/dist/report/productfocus') }}" class="dropdown-item ">Pencapaian Product Focus</a>
-                        <a href="{{ url('/dist/report/brand') }}" class="dropdown-item ">Performance Brand & Sub Brand</a>
-                        <a href="{{ url('/dist/report/stockratio') }}" class="dropdown-item ">Stock Ratio</a>
-                        <a href="{{ url('/dist/report/accountreceivable') }}" class="dropdown-item ">Piutang Distributor</a>
-                        <a href="{{ url('/dist/report/expiredate') }}" class="dropdown-item ">Produk mendekati ED</a>
-                        <a href="{{ url('/dist/report/sttandstd') }}" class="dropdown-item ">Perbandingan STT dan STD</a>
-                        <a href="{{ url('/dist/report/upload') }}" class="dropdown-item ">Status Upload STT</a>
-                      </div>
                     </li>
                     @endif
                     @if (in_array('ADMIN', explode(",",Session::get('usergroup'))) == true)
