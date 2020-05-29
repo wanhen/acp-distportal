@@ -22,7 +22,7 @@
 @endsection
 
 @section('page_js')    
-    <script type="text/javascript" src="{{ url('/assets/js/home_distributor.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/'.$page_js) }}"></script>
 @endsection
 
 @section('sidebar')
@@ -40,14 +40,7 @@
             <div class="card">
                 <div class="card-header bg-green">
                   <h3 class="card-title text-white"> Distributor Connect - ACP</h3>
-                  <div class="card-options">
-                    <select name="period" id="period" class="form-control">
-                      <option value="">-- Pilih Periode --</option>
-                      @foreach ($rec_period as $item)
-                          <option value="{{ $item->period }}" @if ( Session::get("selected_period") == $item->period) selected="selected" @endif>{{ $item->period }}</option>
-                      @endforeach
-                    </select>
-                  </div>
+                  
                 </div>
                      
               <div class="card-body">

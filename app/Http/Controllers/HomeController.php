@@ -71,6 +71,7 @@ class HomeController extends Controller
 
         $data = array(
             'page_title' => 'Homepage',
+            'page_js' => 'home_admin.js',
             'chart' => $chart,
             'rec_upload' => $rec_upload,
             'rec_period' => $rec_period,
@@ -92,8 +93,10 @@ class HomeController extends Controller
 
         $data = array(
             'page_title' => 'Homepage - Distributor',
+            'page_js' => 'home_distributor.js',
             // 'chart' => $chart,
             'rec_period' => $rec_period,
+
         );    
         return view('dist.home')->with($data);
     }
@@ -106,6 +109,7 @@ class HomeController extends Controller
 
         $data = array(
             'page_title' => 'Homepage - RSM',
+            'page_js' => 'home_distributor.js',
             // 'chart' => $chart,
             'rec_period' => $rec_period,
         );    
@@ -120,6 +124,7 @@ class HomeController extends Controller
 
         $data = array(
             'page_title' => 'Homepage - ASPS',
+            'page_js' => 'home_distributor.js',
             // 'chart' => $chart,
             'rec_period' => $rec_period,
         );    

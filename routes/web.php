@@ -103,23 +103,7 @@ Route::middleware(['checklogin'])->group(function () {
     Route::get('/datamaster/item', 'DatamasterController@item');
     Route::get('/datamaster/itemmapping', 'DatamasterController@itemmapping');    
 
-    
-    // distributor data entry
-    Route::get('/dataentry/sttentry', 'DataentryController@sttentry');
-    Route::get('/dataentry/sttedit/{id}', 'DataentryController@sttedit');
-    Route::get('/dataentry/stttransentry', 'DataentryController@stttransentry');
-    Route::get('/dataentry/stttransedit/{id}', 'DataentryController@stttransedit');
-    Route::get('/dataentry/stokentry', 'DataentryController@stokentry');
-    Route::get('/dataentry/stokedit/{id}', 'DataentryController@stokedit');  
-    Route::get('/dataentry/stttranslist', 'DataentryController@stttranslist'); 
-    Route::get('/dataentry/sttlist', 'DataentryController@sttlist');
-    Route::get('/dataentry/stoklist', 'DataentryController@stoklist');
-    Route::post('/dataentry/stttranspost', 'DataentryController@stttranspost');
-    Route::post('/dataentry/sttpost', 'DataentryController@sttpost');
-    Route::post('/dataentry/stokpost', 'DataentryController@stokpost');
-    Route::get('/dataentry/deleteconfirm', 'DataentryController@deleteconfirm');    
-    Route::post('/dataentry/delete', 'DataentryController@deletepost');
-
+   
     // distributor data master
     Route::get('/dist/salesmanentry', 'DistController@dist_salesman_entry');
     Route::get('/dist/customerentry', 'DistController@dist_customer_entry');
@@ -135,15 +119,7 @@ Route::middleware(['checklogin'])->group(function () {
     Route::get('/dist/report/stt', 'DistReportController@report_stt');
     Route::get('/dist/report/stok', 'DistReportController@report_stok');
 
-    Route::get('/dist/report/salestarget', 'DistReportController@report_salestarget'); 
-    Route::get('/dist/report/saleschannel', 'DistReportController@report_saleschannel'); 
-    Route::get('/dist/report/newopenoutlet', 'DistReportController@report_newopenoutlet');  
-    Route::get('/dist/report/productfocus', 'DistReportController@report_productfocus'); 
-    Route::get('/dist/report/brand', 'DistReportController@report_brand'); 
-    Route::get('/dist/report/stockratio', 'DistReportController@report_stockratio'); 
-    Route::get('/dist/report/accountreceivable', 'DistReportController@report_accountreceivable'); 
-    Route::get('/dist/report/expiredate', 'DistReportController@report_expiredate'); 
-    Route::get('/dist/report/sttandstd', 'DistReportController@report_sttandstd'); 
+   
 
     Route::get('/setperiod/{period?}','AccountController@reload_period');
     Route::post('/setperiodsession','AccountController@set_period_session');

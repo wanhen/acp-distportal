@@ -22,7 +22,7 @@
 
 @section('page_js')
     {!! $chart->script() !!}
-    <script type="text/javascript" src="{{ url('/assets/js/home_admin.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/'.$page_js) }}"></script>
 @endsection
 
 @section('sidebar')

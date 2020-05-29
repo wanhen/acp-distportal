@@ -17,7 +17,7 @@
 @endsection
 
 @section('page_js')    
-    <script type="text/javascript" src="{{ url('/assets/js/home_distributor.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/assets/js/'.$page_js) }}"></script>
 @endsection
 
 @section('sidebar')
