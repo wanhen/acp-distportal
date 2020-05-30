@@ -143,9 +143,6 @@
                       </div>
                     </li>
                     <li class="nav-item ">
-                      <a href="{{ url('/admin/report') }}" class="nav-link @if (Request::segment(2) == 'report') active @endif"><i class="fe fe-file"></i> Laporan</a>
-                    </li>
-                    <li class="nav-item ">
                       <a href="{{ url('/admin/user') }}" class="nav-link @if (Request::segment(2) == 'user') active @endif"><i class="fe fe-user"></i> User Administration</a>
                     </li>
                     @endif
