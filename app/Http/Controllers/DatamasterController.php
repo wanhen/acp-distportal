@@ -97,7 +97,7 @@ class DatamasterController extends Controller
             // check if username exists
             $tmprec =  \App\Models\AcpDistributor::where('id', '=', $request->id)->first();
             if ($tmprec === null) {
-                $data =  new \App\Models\AcpPeriod();
+                $data =  new \App\Models\AcpDistributor();
             } else {
                 $data = null;
             }
