@@ -100,7 +100,7 @@
                 <div class="form-group">
                   <label class="col-md-12 control-label" for="report_type">Pilih file yang akan diupload</label>
                   <div class="col-md-12">
-                    <input type="file" name="uploaded_file" class="form-control">
+                    <input type="file" name="uploaded_file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="form-control">
                   </div>
                 </div>
 
