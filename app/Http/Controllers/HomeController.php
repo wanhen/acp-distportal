@@ -95,7 +95,7 @@ class HomeController extends Controller
             ->join('acp_distributor', 'upload_file.dist_code', '=', 'acp_distributor.dist_code')
             ->where('status','PENDING')
             ->orderBy('upload_file.report_date', 'DESC')
-            ->paginate(5);
+            ->get();
 
         $data = array(
             'page_title' => 'Homepage - Distributor',

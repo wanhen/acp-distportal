@@ -62,14 +62,15 @@
                            
                               <!-- Begin body content -->
           <div class="table-responsive">
-            <table id="mytable" class="display table table-striped" style="width:100%">
+            <table data-toggle="table" data-height="460" data-width="600" data-search="true" data-visible-search="true" data-show-columns="true"
+  data-show-footer="false">
                 <thead>
                     <tr>
-                        <th>Tgl Lapor</th>
+                        <th data-sortable="true">Tgl Lapor</th>
                         <th>Distributor</th>
-                        <th>Nama File</th>
+                        <th data-sortable="true">Nama File</th>
                         <th>Jenis Laporan</th>
-                        <th>Tgl Upload</th>
+                        <th data-sortable="true">Tgl Upload</th>
                         <th>Status</th>
                     </tr>                        
                 </thead>
@@ -87,19 +88,9 @@
                     @endforeach
                     
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
+               
             </table>
-            <!-- end of body content -->
-            {{ $rec_upload->links() }}
+            <!-- end of body content -->           
           </div>
                             
                         </div>
