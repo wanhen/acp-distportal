@@ -45,13 +45,13 @@
           <!-- Begin body content -->
           <div class="table-responsive">
                 <table data-toggle="table" data-height="400" data-width="600" data-search="true" data-visible-search="true" data-show-columns="true"
-  data-show-footer="true"> 
+  data-show-footer="false"> 
                     <thead>
                         <tr>
-                            <th data-width="20">Tanggal</th>
-                            <th data-width="20">No Faktur</th>
-                            <th data-width="20">Kode Sales</th>
-                            <th data-width="50">Nama Sales</th>
+                            <th data-width="20" data-sortable="true">Tanggal</th>
+                            <th data-width="20" data-sortable="true">No Faktur</th>
+                            <th data-width="20" data-sortable="true">Kode Sales</th>
+                            <th data-width="50" data-sortable="true">Nama Sales</th>
                             <th>Kode Customer</th>
                             <th>Nama Customer</th>
                             <th>Alamat</th>
@@ -59,8 +59,8 @@
                             <th>Channel</th>
                             <th>Tipe Outlet</th>
                             <th>Brand</th>
-                            <th>Kode Item</th>
-                            <th>Nama Item</th>
+                            <th data-sortable="true">Kode Item</th>
+                            <th data-sortable="true">Nama Item</th>
                             <th>Kode Item ACP</th>
                             <th>Harga</th>
                             <th>Qty1</th>
@@ -70,7 +70,7 @@
                             <th>Qty</th>
                             <th>Unit</th>
                             <th>Diskon</th>
-                            <th>Revenue</th>
+                            <th data-sortable="true">Revenue</th>
                             <th>Action</th>
                         </tr>                        
                     </thead>

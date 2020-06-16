@@ -24,11 +24,12 @@ class AccountController extends Controller
             //if(Hash::check($password,$data->password)){
                 
             if($password == $data->password){
-                Session::put('username',$data->username);
-                Session::put('userlevel',$data->userlevel);
-                Session::put('usergroup',$data->usergroup);
-                Session::put('emp_id',$data->emp_id);  
-                Session::put('dist_code',$data->dist_code);  
+                Session::put('username', $data->username);
+                Session::put('userlevel', $data->userlevel);
+                Session::put('usergroup', $data->usergroup);
+                Session::put('emp_id', $data->emp_id);  
+                Session::put('dist_code', $data->dist_code);
+                Session::put('use_upload', $data->use_upload);  
                 if ($data->distributors) {
                     Session::put('dist_name',$data->distributors->dist_name);
                 } else {

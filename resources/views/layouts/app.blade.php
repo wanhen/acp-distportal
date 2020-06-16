@@ -131,7 +131,9 @@
                     <li class="nav-item dropdown">
                       <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'dataentry') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Data Entry </a>
                       <div class="dropdown-menu dropdown-menu-arrow">
+                        @if (Session::get('use_upload') == 0)
                         <a href="{{ url('/dataentry/stttranslist') }}" class="dropdown-item ">Entry STT</a>
+                        @endif 
                         <a href="{{ url('/dataentry/stoklist') }}" class="dropdown-item ">Entry Stok</a>
                       </div>
                     </li>

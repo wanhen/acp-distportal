@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 // use App\Imports\UsersImport;
 use App\Imports\TempUploadImport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -354,6 +355,13 @@ class UploadController extends Controller
             $extension = \File::extension($request->uploaded_file->getClientOriginalName());
             if ($extension == "xlsx" || $extension == "xls" || $extension == "csv" || $extension == "xlsm") {
                 $filename = $request->uploaded_file->getClientOriginalName();
+
+                 // move file to public folder
+                 $uppath = 'uploadedfiles/std';
+                 if (! \File::exists($uppath)) {
+                     \File::makeDirectory($uppath);
+                 }
+                 $request->uploaded_file->move($uppath, $request->uploaded_file->getClientOriginalName());
                 
                 try {
                     
@@ -363,7 +371,8 @@ class UploadController extends Controller
                     // delete old record 
                     DB::table('upload_std')->where('month',$request->period)->delete();
                     
-                    $result = Excel::import($cl, request()->file('uploaded_file'));
+                    // $result = Excel::import($cl, request()->file('uploaded_file'));
+                    $result = Excel::import($cl,  Storage::disk('upload_std')->get($filename));
                     
                 } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
                     $failures = $e->failures();
