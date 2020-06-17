@@ -32,7 +32,7 @@ WithMultipleSheets
         
         ini_set('max_execution_time', 14000);
         return new \App\Models\UploadStd([
-            'month' => $row['month'],
+            'period' => $row['month'],
             'week' => $row['week'],
             'date' => \Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['date'])),
             'item_code' => $row['internal_id'],

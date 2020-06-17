@@ -64,10 +64,10 @@ return [
             'url' => env('AWS_URL'),
         ],
 
-        'upload_std' => [
+        'upload' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/uploadedfiles/std'),
-            'url' => env('APP_URL') . '/storage',
+            'root' => storage_path('app/public/uploadedfiles'),
+            'url' => env('APP_URL') . ':8000/storage/uploadedfiles',
             'visibility' => 'public',
         ],
 

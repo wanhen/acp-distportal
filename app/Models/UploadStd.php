@@ -13,7 +13,7 @@ class UploadStd extends Model
     // public $incrementing = false; //disable id
     // public $timestamps = false; // disable updated_at and created_at
 
-    protected $fillable = ['month',
+    protected $fillable = ['period',
                 'week',
                 'date',
                 'item_code',
