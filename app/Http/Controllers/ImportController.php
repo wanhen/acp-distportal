@@ -64,7 +64,7 @@ class ImportController extends Controller
                 $errmsg .= "<li>Baris ke : ".$failure->row()." | "; // row that went wrong
                 $errmsg .= "Field :".$failure->attribute()." | "; // either heading key (if using heading row concern) or column index
                 $errmsg .= "Pesan Error :".$failure->errors()[0]." </li>"; // Actual error messages from Laravel validator
-                // $errmsg .= "Value :".$failure->values()."<br />"; // The values of the row that has failed.
+                $errmsg .= "Value :".$failure->values()."<br />"; // The values of the row that has failed.
                 if ($request->report_type == "STOK")
                 {
                     // dd($failure->values());

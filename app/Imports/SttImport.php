@@ -24,7 +24,7 @@ class SttImport implements ToModel, WithHeadingRow, WithCalculatedFormulas, With
         
     public function model(array $row)
     {
-         dd($row);      
+        // dd($row);      
         // 'dist_code','report_date','period','tanggal','no_faktur','code_salesman','nama_salesman','code_customer','nama_customer','alamat','kota','channel','type_outlet','brand','code_item','nama_item','code_item_acp','harga','qty1','unit1','qty2','unit2','diskon','revenue'
         return new \App\Models\UploadStt([
             //
@@ -48,7 +48,7 @@ class SttImport implements ToModel, WithHeadingRow, WithCalculatedFormulas, With
             'code_item_acp' => $row['code_item_acp'],
             'harga' => ($row['harga_per_item'] == null ? 0:$row['harga_per_item']),            
             'qty' => ($row['qty'] == null ? 0 : $row['qty']),
-            'unit' => ($row['unit'] == null ? "" : $row['unit']),
+            'unit' => ($row['satuan_terkecil_pcsbtlrencengkgjerigen'] == null ? "" : $row['satuan_terkecil_pcsbtlrencengkgjerigen']),
             'diskon' => ($row['diskon'] == null ? 0 : $row['diskon']),
             'revenue' => ($row['revenue_gross_rp'] == null ? 0 : $row['revenue_gross_rp']),
         ]);
@@ -57,7 +57,7 @@ class SttImport implements ToModel, WithHeadingRow, WithCalculatedFormulas, With
     // use heading row
     public function headingRow(): int
     {
-        return 7;
+        return 8;
     }
 
     // batchinsert
