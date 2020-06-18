@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class UploadStt extends Model
 {
     protected $table = "upload_stt";
-    // protected $connection = 'sqlsrv';
-    // protected $table = "Doctor";
-    // protected $primaryKey = "DoctorId"; //custom PK
+    // protected $connection = 'sqlsrv';    
+    // protected $primaryKey = "CustomId"; //custom PK
     // public $incrementing = false; //disable id
     // public $timestamps = false; // disable updated_at and created_at
 

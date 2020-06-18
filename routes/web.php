@@ -71,9 +71,10 @@ Route::middleware(['checkadmin'])->group(function () {
     
     // validate upload by admin
     Route::get('/validate/list','ValidateController@validate_list')->name('validate_upload_list');
-    Route::get('/validate/list_entry','ValidateController@validate_list')->name('validate_entry_list');
+    Route::get('/validate/list_entry','ValidateController@validate_entry_list')->name('validate_entry_list');
     Route::get('/validate/stt/{id?}','ValidateController@validate_stt')->name('validate_stt');
     Route::post('/valdate/stt', 'ValidateController@validate_stt_post')->name('validate_stt_post');
+    Route::post('/valdate/stt/approve', 'ValidateController@validate_stt_approve')->name('validate_stt_approve');
 
     Route::get('/validate/stok/{id?}','ValidateController@validate_stok')->name('validate_stok');
     Route::post('/valdate/stok', 'ValidateController@validate_stok_post')->name('validate_stok_post');
@@ -90,7 +91,7 @@ Route::middleware(['checklogin'])->group(function () {
     Route::get('/account/profile', 'AccountController@profile');
     Route::post('/account/profile/post', 'AccountController@profile_post');
     Route::get('/account/changepassword', 'AccountController@changepassword');
-    Route::post('/account/changepassword/post', 'AccountController@changepassword_post');
+    Route::post('changepassword_post', 'AccountController@changepassword_post')->name('changepassword_post');
     Route::get('/account/help', 'AccountController@help');
       
     // data master

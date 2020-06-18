@@ -13,7 +13,7 @@
         <div class="card-header bg-green">
         <h3 class="card-title text-white"> Validasi Laporan STT </h3>
           <div class="card-options">
-             <a href="http://" class="btn btn-primary"> <i class="fa fa-check-square-o"></i> Approve</a>
+             <a href="{{ route('validate_stt_approve', ['id' => $rec_upload->id]) }}" class="btn btn-primary"> <i class="fa fa-check-square-o"></i> Approve</a>
           </div>
         </div>
         <div class="card-body">
@@ -71,7 +71,7 @@
                             <th>Unit</th>
                             <th>Diskon</th>
                             <th data-sortable="true">Revenue</th>
-                            <th>Action</th>
+                            
                         </tr>                        
                     </thead>
                     <tbody>
@@ -100,7 +100,7 @@
                             <td>{{ $rec->unit }}</td>
                             <td class="text-right">{{ number_format($rec->diskon,0) }}</td>
                             <td class="text-right">{{ number_format($rec->revenue,0) }}</td>
-                            <td>Action</td>
+                            
                         </tr>
                         @endforeach
                     </tbody>

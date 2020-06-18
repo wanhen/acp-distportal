@@ -38,18 +38,7 @@ class AccountController extends Controller
                 
                                             
                 Session::put('islogin',TRUE);
-
-                // $emp = \App\Models\Employee::where('empid', $data->empid)->first();
-                // Session::put('superiorid',$emp->superiorid);
-
-                // my subordinate
-                // $sub = \App\Models\Employee::where('SuperiorId', $data->EmpId)->get();
-                // $sub_str = '';
-                // foreach($sub as $item) {
-                //     $sub_str .= "".$item->EmpId.",";
-                // }
-                // $sub_str = substr($sub_str,0-1);
-                // Session::put('subordinate',$sub_str);
+                
 
                 return redirect('/');
                 
@@ -124,20 +113,34 @@ class AccountController extends Controller
     public function changepassword_post(Request $request)
     {
 
+        $rec = \App\Models\User::where('username', Session::get('username'))->first();
+        if ($rec->password !== $request->password_old)
+        {
+            Session::flash('error', 'Password lama tidak cocok!');
+            return back();
+            // exit();
+        }
         $this->validate($request, [
-            'email' => 'required|email',                
-            
+            'password_new' => 'required',
+            'password' => ['same:password_new'],
         ]);
-        $data =  DB::table('users')->where('email', $request->email)->first();
-        $data->password = bcrypt($request->password);           
-        $data->save();
+        
+        // $data =  DB::table('acp_users')->where('username', Session::get('username'))->first();
+        
+        $rec->password = $request->password;
+        $rec->password_crypt = bcrypt($request->password);
+        $rec->save();    
+
+        // $data =  DB::table('acp_users')->where('email', $request->email)->first();
+        // $data->password = bcrypt($request->password);
+        // $data->save();
 
         // send email di sini
+        // pengiriman email menggunakan sendgrid : wawan.hendrawan@anggana.co.id
 
         // send messages
-        Session::flash('success', 'Password baru telah di kirim ke email!');
+        Session::flash('success', 'Password telah di update!');
         return back();
-        
     }
 
     

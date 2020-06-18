@@ -26,7 +26,7 @@ class ValidateController extends Controller
     {
         $rec_upload = \App\Models\Uploadfile::where('status', 'PENDING')
             ->orderBy('created_at', 'DESC')
-            ->paginate(10);
+            ->get();
                 
         $data = array(
             'page_title'=>'Validasi Upload',
@@ -40,6 +40,24 @@ class ValidateController extends Controller
        
     }
 
+    public function validate_entry_list(Request $request, $id=null)
+    {
+        $rec_upload = \App\Models\Uploadfile::where('status', 'PENDING')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+                
+        $data = array(
+            'page_title'=>'Validasi Hasil Entry',
+            'Description'=>'Validasi Hasil Entry',
+            'author'=>'acp',
+            'rec_upload' => $rec_upload,            
+            );
+
+        return view('upload.validasientry_list')->with($data);
+
+       
+    }
+
     public function validate_stt(Request $request, $id=null)
     {
         $rec_upload = \App\Models\Uploadfile::where('id', $id)->first();
@@ -48,6 +66,7 @@ class ValidateController extends Controller
             ->where('report_date', $rec_upload->report_date)
             ->where('period', $rec_upload->period)
             ->get();
+
          $data = array(
             'page_title'=>'Validasi Upload - STT',
             'Description'=>'Validasi Upload - STT',
@@ -61,6 +80,7 @@ class ValidateController extends Controller
        
     }
 
+   
     public function validate_std(Request $request)
     {
         if (Session::get('dist_code') !== null) {
@@ -255,6 +275,33 @@ class ValidateController extends Controller
 
         
     }
+
+    public function validate_stt_approve(Request $request)
+    {
+        $period = $request->period;
+        $dist_code = $request->dist_code;
+
+        // pastikan item di table upload stt, item_code sudah ok.
+        $rec_stt_upload = DB::table('upload_stt')
+            ->where('period', $period)
+            ->where('dist_code', $dist_code)
+            ->get();
+
+        // delete existing
+        DB::table('dist_stt_detail')->where('period',$period)->where('dist_code',$dist_code)->delete(); 
+        DB::table('dist_stt_header')->where('period',$period)->where('dist_code',$dist_code)->delete(); 
+
+        // insert to header
+
+        foreach ($rec_stt_upload as $row)
+        {
+          
+            // insert to detail
+        }
+
+        
+    }
+
 
     public function validate_std_post(Request $request)
     {

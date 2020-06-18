@@ -27,14 +27,45 @@
             </div>
         @endif  
 
+        @if ($message = Session::get('error'))
+          <div class="alert alert-danger alert-block">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            <h3>{!! $message !!}</h3>
+          </div>
+        @endif
+
+        @if ($message = Session::get('success'))
+          <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            <strong>{{ $message }}</strong>
+          </div>
+        @endif
+
         <form action="{{ url('changepassword_post') }}" method="post">
           {{ csrf_field() }}
 
           <div class="form-group">
+            <label for="password_old">Password Lama</label>
+            <input type="password" name="password_old" id="password_old" class="form-control" placeholder="Password Lama">            
+          </div>
+          <div class="form-group">
+            <label for="password_new">Password Baru</label>
+            <input type="password" name="password_new" id="password_new" class="form-control" placeholder="Password Baru">            
+          </div>
+          <div class="form-group">
+            <label for="password">Password Baru ( Ulangi )</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password Baru">            
+          </div>
+
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary bg-green">Ubah Password</button>
+          </div>
+
+          <!-- <div class="form-group">
             <label for="email">Masukan alamat email anda</label>
             <input type="email" name="email" id="email" class="form-control" placeholder="email">
-            <button type="submit" class="btn btn-primary">Request Password</button>
-          </div>
+            <button type="submit" class="btn btn-primary bg-green">Request Password</button>
+          </div> -->
         </form>    
       
           <!-- end of body content -->
