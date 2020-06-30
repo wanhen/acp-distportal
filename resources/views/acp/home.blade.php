@@ -6,13 +6,17 @@
 
 @section('plugins_css')
   @parent  
+  <link href="{{ url('/') }}/themes-tabler/assets/plugins/jquery-confirm-v3.3.4/plugin.css" rel="stylesheet" />
   <link href="{{ url('/') }}/themes-tabler/assets/plugins/bootstrap-table/plugin.css" rel="stylesheet" />
   <link href="{{ url('/') }}/themes-tabler/assets/plugins/chartjs/plugin.css" rel="stylesheet" />
+  <link href="{{ url('/') }}/themes-tabler/assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
 @endsection
 
 @section('plugins_js')
   @parent
+  <script src="{{ url('/') }}/themes-tabler/assets/plugins/jquery-confirm-v3.3.4/plugin.js"></script>
   <script src="{{ url('/') }}/themes-tabler/assets/plugins/chartjs/plugin.js"></script>
+  <script src="{{ url('/') }}/themes-tabler/assets/plugins/charts-c3/plugin.js"></script>
   <script src="{{ url('/') }}/themes-tabler/assets/plugins/bootstrap-table/plugin.js"></script>
 @endsection
 
@@ -46,7 +50,7 @@
               <div class="card-body">
                 <div class="text-wrap p-lg-6">
 
-                  <h2 class="mt-0 mb-4">Selamat Datang di Distributor Connect - ACP - Admin</h2>
+                  <h2 class="mt-0 mb-4">Selamat Datang di Distributor Connect xx- ACP - Admin</h2>
                   
                   <div class="row row-card row-deck">
 

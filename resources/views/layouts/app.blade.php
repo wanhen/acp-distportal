@@ -52,7 +52,7 @@
      </style>
 
   </head>
-  <body class="">
+  <body class="fixed-header">
     <div class="page">
         <div class="page-main">
 
@@ -107,7 +107,7 @@
               </div>
             </div>
           </div>
-          <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+          <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse" style="top: 65px; z-index: 10;">
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-lg-3 ml-auto">
@@ -200,7 +200,7 @@
               </div>
             </div>
           </div>
-
+          <div class="wide-fix"></div>
           @section('page_content')
 
 

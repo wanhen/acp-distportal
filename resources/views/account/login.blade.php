@@ -43,6 +43,7 @@
                 <div class="card-body p-6">
 				<div class="text-center mb-6">
 					<img src="{{ url('/') }}/assets/images/iss-logo.png" class="h-9" alt="">
+          <img src="{{ url('/') }}/assets/images/app-name.png" class="h-7" alt="">
 				</div>
                   <!--div class="card-title">Login to your account</div-->
                   @if (session('msg-alert'))

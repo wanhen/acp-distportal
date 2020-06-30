@@ -1,5 +1,8 @@
 requirejs(['jquery','jquery-ui','jquery-confirm','bootstrap-table'], function () {
  
+  // set to current period
+  $('#period').trigger('change');
+
       $('#period').on('change',function(e) {
         e.preventDefault(); // cancel submission
       

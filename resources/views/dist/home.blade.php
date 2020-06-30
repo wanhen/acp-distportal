@@ -51,6 +51,15 @@
           </div>
         </div>
 
+
+        <div class="card-body">
+          @if (Session::get('selected_period') == null)
+            Belum ada periode yang dipilih
+          @else
+            Status Upload Laporan <button class="btn btn-primary bg-green">STT</button>
+          @endif
+        </div>
+
         <div class="card-body" style="display:none;">
 
           <div class="row row-cards">

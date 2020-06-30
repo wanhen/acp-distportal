@@ -560,7 +560,7 @@ pre code {
 }
 
 .container {
-  width: 100%;
+  width: 100%; 
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
@@ -587,7 +587,12 @@ pre code {
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 1200px;
+    max-width: 1200px;    
+  }
+
+  .wide-fix {
+    margin-top: 50px;
+    display: block;
   }
 }
 

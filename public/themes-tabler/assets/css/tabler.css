@@ -560,7 +560,7 @@ pre code {
 }
 
 .container {
-  width: 100%;
+  width: 100%;  
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
@@ -569,13 +569,13 @@ pre code {
 
 @media (min-width: 576px) {
   .container {
-    max-width: 540px;
+    max-width: 540px;    
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 720px;    
   }
 }
 
