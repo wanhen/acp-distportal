@@ -50,7 +50,7 @@
               <div class="card-body">
                 <div class="text-wrap p-lg-6">
 
-                  <h2 class="mt-0 mb-4">Selamat Datang di Distributor Connect xx- ACP - Admin</h2>
+                  <h2 class="mt-0 mb-4">Selamat Datang di Distributor Portal - ACP - Admin</h2>
                   
                   <div class="row row-card row-deck">
 
