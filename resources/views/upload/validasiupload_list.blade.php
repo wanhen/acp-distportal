@@ -58,9 +58,10 @@
                                 <td>{{ $rec->status }}</td>
                                 <td>
                                 @if ($rec->status == "PENDING")
-                                  <a href="{{ route('validate_stt', ['id' => $rec->id]) }}" class="btn btn-primary bg-green"><i class="fe fe-check-circle"></i>&nbsp; Validate</a>
-                                  
-                                @else 
+                                  <!-- <a href="{{ route('validate_stt', ['id' => $rec->id]) }}" class="btn btn-primary bg-green"><i class="fe fe-check-circle"></i>&nbsp; Validate</a> -->
+                                  <a href="{{ route('validate_stt_approve_manual_confirm', ['x' => Crypt::encryptString("id=".$rec->id."&t=upload_file&r=/validate/list")]) }}" class="btn btn-primary bg-green"><i class="fe fe-check-circle"></i>&nbsp; Validate</a>
+                                  <!-- x=".Crypt::encryptString("id=".$rec_stok->id."&t=dist_stok&r=/dataentry/stoklist" -->
+                                  @else 
 
                                 @endif
                                 {{-- <form action="{{ url('/admin/deletefile') }}" method="post">

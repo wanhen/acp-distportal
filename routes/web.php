@@ -73,8 +73,10 @@ Route::middleware(['checkadmin'])->group(function () {
     Route::get('/validate/list','ValidateController@validate_list')->name('validate_upload_list');
     Route::get('/validate/list_entry','ValidateController@validate_entry_list')->name('validate_entry_list');
     Route::get('/validate/stt/{id?}','ValidateController@validate_stt')->name('validate_stt');
-    Route::post('/valdate/stt', 'ValidateController@validate_stt_post')->name('validate_stt_post');
-    Route::post('/valdate/stt/approve', 'ValidateController@validate_stt_approve')->name('validate_stt_approve');
+    Route::post('/validate/stt', 'ValidateController@validate_stt_post')->name('validate_stt_post');
+    Route::post('/validate/stt/approve', 'ValidateController@validate_stt_approve')->name('validate_stt_approve');
+    Route::get('/validate/approveconfirm', 'ValidateController@validate_stt_approve_manual_confirm')->name('validate_stt_approve_manual_confirm'); 
+    Route::post('/valdate/stt/approve_manual_post', 'ValidateController@validate_stt_approve_manual_post')->name('validate_stt_approve_manual_post');
 
     Route::get('/validate/stok/{id?}','ValidateController@validate_stok')->name('validate_stok');
     Route::post('/valdate/stok', 'ValidateController@validate_stok_post')->name('validate_stok_post');

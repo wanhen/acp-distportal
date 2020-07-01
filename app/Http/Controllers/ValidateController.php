@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Crypt;
 
 class ValidateController extends Controller
 {
@@ -301,6 +302,50 @@ class ValidateController extends Controller
 
         
     }
+
+
+    public function validate_stt_approve_manual_confirm(Request $request)
+    {
+
+        $data = array(
+            'x' => $request->query('x',''),
+        );
+        return view('messages.approveconfirm')->with($data);
+    }
+
+    public function validate_stt_approve_manual_post(Request $request)
+    {
+        // dd($request->x);
+        // $encrypted = Crypt::encryptString('Hello world.');
+        // $decrypted = Crypt::decryptString($encrypted);
+        $x = Crypt::decryptString($request->x);
+        parse_str($x, $x_array);
+               
+        $id = ($x_array['id'] ?? '');
+        $t = ($x_array['t'] ?? '');
+        $r = ($x_array['r'] ?? '');
+        
+        if ($request->isMethod('post'))
+        {
+           
+            $field_table = $t;
+            $field_key = "id";
+            $field_value = $id;
+            $redir_url = $r;
+            
+            if ($field_table !== "")
+            {
+                DB::update('update upload_file set status = \'APPROVED\' where id = ?', [$id]);
+                
+                return redirect($redir_url);
+            } else {
+                return "Error Occured!";
+            }
+            
+        }
+    }
+
+    
 
 
     public function validate_std_post(Request $request)
