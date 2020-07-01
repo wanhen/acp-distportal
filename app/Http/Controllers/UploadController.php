@@ -36,8 +36,9 @@ class UploadController extends Controller
         if($request->hasFile('uploaded_file')){
             $extension = \File::extension($request->uploaded_file->getClientOriginalName());
             if ($extension == "xlsx" || $extension == "xls" || $extension == "csv" || $extension == "xlsm") {
-                $filename = $request->uploaded_file->getClientOriginalName();
-               
+                $filename_ori = $request->uploaded_file->getClientOriginalName();
+                $filename = "stt_".date('YmdHis').'.'.$extension;
+
                 // DB::enableQueryLog(); // Enable query log
                 $rec_file = DB::connection()->table('upload_file')
                     ->where('dist_code', '=', $request->dist_code)
@@ -119,7 +120,9 @@ class UploadController extends Controller
                 $dt=date_create($request->date_report);
                 $date_report = date_format($dt,"Y-m-d");
 
-                $data->filename = $request->uploaded_file->getClientOriginalName();
+                $data->filename = $filename;
+                $data->filename_ori = $filename_ori;
+                $data->filedesc = $request->filedesc;
                 $data->filepath = $uppath;
                 $data->report_date = $request->date_report;
                 $data->period = $request->period;
@@ -155,8 +158,8 @@ class UploadController extends Controller
         if($request->hasFile('uploaded_file')){
             $extension = \File::extension($request->uploaded_file->getClientOriginalName());
             if ($extension == "xlsx" || $extension == "xls" || $extension == "csv" || $extension == "xlsm") {
-                $filename = $request->uploaded_file->getClientOriginalName();
-
+                $filename_ori = $request->uploaded_file->getClientOriginalName();
+                $filename = "stok_".date('YmdHis').'.'.$extension;
                
                 // DB::enableQueryLog(); // Enable query log
                 $rec_file = DB::connection()->table('upload_file')
@@ -235,14 +238,16 @@ class UploadController extends Controller
                 $dt=date_create($request->date_report);
                 $date_report = date_format($dt,"Y-m-d");
 
-                $data->filename = $request->uploaded_file->getClientOriginalName();
+                $data->filename = $filename;
+                $data->filename_ori = $filename_ori;
+                $data->filedesc = $request->filedesc;
                 $data->filepath = $uppath;
                 $data->report_date = $request->date_report;
                 $data->period = $request->period;
                 $data->report_ok = $request->report_ok;
                 $data->report_type = $request->report_type;
                 $data->dist_code = $request->dist_code;
-                $data->dist_name = $request->dist_name;
+                $data->dist_name = $request->dist_name;               
                 $data->username = Session::get('username');
                 $data->status = 'PENDING';
 

@@ -48,7 +48,7 @@
 
 
         <div class="card-body">
-          <h3>Daftar laporan yang sudah di Upload</h3>
+          <h3>Daftar file laporan yang sudah di Upload</h3>
           <div class="responsive">
               <table class="table table-hover">
                   <thead>

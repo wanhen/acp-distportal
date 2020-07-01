@@ -109,9 +109,15 @@
                 </div> -->
 
                 <div class="form-group">
-                  <label class="col-md-12 control-label" for="report_type">Pilih file yang akan diupload</label>
+                  <label class="col-md-12 control-label" for="uploaded_file">Pilih file yang akan diupload</label>
                   <div class="col-md-12">
                     <input type="file" name="uploaded_file" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="filedesc">Keterangan</label>
+                  <div class="col-md-12">
+                  <input type="text" id="filedesc" name="filedesc" placeholder="Nama Distributor" value="{{ Session::get('filedesc') }}" class="form-control" readonly>
                   </div>
                 </div>
 
