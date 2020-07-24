@@ -8,7 +8,6 @@ class Uploadfile extends Model
 {
     protected $table = "upload_file";
     // protected $connection = 'sqlsrv';
-    // protected $table = "Doctor";
     // protected $primaryKey = "DoctorId"; //custom PK
     // public $incrementing = false; //disable id
     // public $timestamps = false; // disable updated_at and created_at

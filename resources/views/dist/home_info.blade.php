@@ -55,6 +55,7 @@
                         <th>Tgl Lapor</th>
                         <th>Periode</th>
                         <th>File</th>
+                        <th>Sesuai Format</th>
                         <th>Diupload</th>
                         <th>Status</th>
                   </thead>
@@ -64,6 +65,7 @@
                           <td>{{ $rec->report_date }}</td>
                           <td>{{ $rec->period }}</td>
                           <td>{{ $rec->filename }} </td>
+                          <td>{{ $rec->report_ok }} </td>
                           <td>{{ $rec->created_at }}</td>
                           <td>{{ $rec->status }}</td>
                       </tr>

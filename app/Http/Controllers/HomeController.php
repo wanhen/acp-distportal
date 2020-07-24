@@ -59,7 +59,7 @@ class HomeController extends Controller
             'backgroundColor' => '#dddddd',
         ]);
 
-        $rec_upload = DB::table('upload_file')->select(DB::raw('upload_file.id,upload_file.dist_code, acp_distributor.dist_name, upload_file.report_date, upload_file.period, upload_file.report_type, upload_file.filename, upload_file.created_at, upload_file.status'))
+        $rec_upload = DB::table('upload_file')->select(DB::raw('upload_file.id,upload_file.dist_code, acp_distributor.dist_name, upload_file.report_date, upload_file.period, upload_file.report_type, upload_file.filename, upload_file.report_ok, upload_file.created_at, upload_file.status'))
             ->join('acp_distributor', 'upload_file.dist_code', '=', 'acp_distributor.dist_code')
             ->where('status','PENDING')
             ->orderBy('upload_file.report_date', 'DESC')
@@ -90,7 +90,7 @@ class HomeController extends Controller
             ->orderBy('period', 'desc')
             ->get();
         
-            $rec_upload = DB::table('upload_file')->select(DB::raw('upload_file.id,upload_file.dist_code, acp_distributor.dist_name, upload_file.report_date, upload_file.period, upload_file.report_type, upload_file.filename, upload_file.created_at, upload_file.status'))
+            $rec_upload = DB::table('upload_file')->select(DB::raw('upload_file.id,upload_file.dist_code, acp_distributor.dist_name, upload_file.report_date, upload_file.period, upload_file.report_type, upload_file.report_ok, upload_file.filename, upload_file.created_at, upload_file.status'))
             ->join('acp_distributor', 'upload_file.dist_code', '=', 'acp_distributor.dist_code')
             // ->where('status','PENDING')
             ->where('upload_file.dist_code', Session::get('dist_code'))

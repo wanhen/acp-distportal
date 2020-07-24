@@ -100,6 +100,7 @@
                           <th>Periode</th>
                           <th>Jenis Laporan</th>
                           <th>Nama File</th>
+                          <th>Sesuai Format</th>
                           <th>Created</th>
                           <th>Status</th>
                           <th>Action</th>                          
@@ -113,12 +114,9 @@
                           <td>
                             {{ $rec->report_type }}
                           </td>
-                          <td>
-                            {{ $rec->filename }}
-                          </td>
-                          <td>
-                          {{ $rec->created_at }}
-                          </td>
+                          <td>{{ $rec->filename }}</td>
+                          <td>{{ $rec->report_ok }}</td>
+                          <td>{{ $rec->created_at }}</td>
                           <td>
                             @if ($rec->status == 'SUCCESS')
                               <span class="status-icon bg-success"></span> {{ $rec->status }}
