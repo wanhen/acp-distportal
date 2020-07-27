@@ -61,9 +61,9 @@ class HomeController extends Controller
 
         $rec_upload = DB::table('upload_file')->select(DB::raw('upload_file.id,upload_file.dist_code, acp_distributor.dist_name, upload_file.report_date, upload_file.period, upload_file.report_type, upload_file.filename, upload_file.report_ok, upload_file.created_at, upload_file.status'))
             ->join('acp_distributor', 'upload_file.dist_code', '=', 'acp_distributor.dist_code')
-            ->where('status','PENDING')
+            // ->where('status','PENDING')
             ->orderBy('upload_file.report_date', 'DESC')
-            ->paginate(5);
+            ->paginate(10);
         
         $rec_period = \App\Models\AcpPeriod::where('is_active', 1)
             ->orderBy('period', 'desc')
@@ -75,7 +75,7 @@ class HomeController extends Controller
             'rec_upload' => $rec_upload,
             'rec_period' => $rec_period,
         );    
-        return view('acp.home')->with($data);
+        return view('acp.home_admin')->with($data);
     }
 
     public function home_distributor()

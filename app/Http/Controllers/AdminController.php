@@ -30,8 +30,7 @@ class AdminController extends Controller
             'page_title' => 'Monitoring Data Upload',
             'rec_upload'=> $rec_upload,
         );
-
-        // dd($rec_upload);
+      
         return view('acp.monitor')->with($data);
     }
 

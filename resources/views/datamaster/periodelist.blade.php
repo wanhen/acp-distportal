@@ -64,6 +64,7 @@
             </tbody>
             @endforeach
           </table>
+          {{ $rec_period->links() }}
         </div>
       </div>
         <!-- end of body content -->
@@ -79,15 +80,13 @@
 @endsection
 
 @section('plugins_css')
-  @parent  
-  <link href="{{ url('/') }}/themes-tabler/assets/plugins/datatables/plugin.css" rel="stylesheet" />
+  @parent
   <link href="{{ url('/') }}/themes-tabler/assets/plugins/jquery-confirm-v3.3.4/plugin.css" rel="stylesheet" />
 
 @endsection
 
 @section('plugins_js')
   @parent
-  <script src="{{ url('/') }}/themes-tabler/assets/plugins/datatables/plugin.js"></script>
   <script src="{{ url('/') }}/themes-tabler/assets/plugins/jquery-confirm-v3.3.4/plugin.js"></script>
 @endsection
 

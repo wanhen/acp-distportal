@@ -30,7 +30,7 @@ class DatamasterController extends Controller
         }
         $rec_period = DB::table('acp_period')->select(DB::raw('period as bulan, period, is_active'))
             ->orderBy('period','DESC')
-            ->get();       
+            ->paginate(12);       
         $data = array(
             'page_title' => 'Master Periode',
             'rec_period' => $rec_period,
@@ -206,17 +206,17 @@ class DatamasterController extends Controller
     }
 
     
-    function get_new_id()
-    {
-        $row = DB::connection('sqlsrv_sales')->table("vw_LastId")->select('LASTID')
-        ->where('TblName', 'Doctor')
-        ->first();
+    // function get_new_id()
+    // {
+    //     $row = DB::connection('sqlsrv_sales')->table("vw_LastId")->select('LASTID')
+    //     ->where('TblName', 'Doctor')
+    //     ->first();
 
-        $lastid = $row->LASTID+1;
-        $lastidtext = '00000'.$lastid;
-        $lastidtext = substr($lastidtext,-5);
-        return 'DL'.$lastidtext;
-    }
+    //     $lastid = $row->LASTID+1;
+    //     $lastidtext = '00000'.$lastid;
+    //     $lastidtext = substr($lastidtext,-5);
+    //     return 'DL'.$lastidtext;
+    // }
 
    
 

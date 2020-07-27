@@ -5,6 +5,7 @@ use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
+use File;
 
 
 class DataentryController extends Controller
@@ -538,13 +539,29 @@ class DataentryController extends Controller
             
             if ($field_table !== "")
             {
+                // klo table upload_file, ambil dulu info filenya, hapus juga upload_stt, dan file-nya.
+                if ($field_table == "upload_file")
+                {
+                    $rec_file = DB::table('upload_file')->select(DB::raw('*'))
+                        ->where('id', $field_value)
+                        ->first();
+                    
+                        if ($rec_file !== null)
+                        {
+                            DB::connection()->delete("delete from upload_stt where filename = ?",[$rec_file->filename]);
+                            File::delete('storage/uploadedfiles/'.$rec_file->dist_code.'/'.$rec_file->filename);
+                        }
+                    
+                }
+                
                 DB::connection()->delete("delete from ".$field_table." where ".$field_key." = ?",[$field_value]);
                 // khusus kalo stt header
                 if ($field_table == "dist_stt_header")
                 {
                     DB::connection()->delete("delete from dist_stt_detail where header_id = ?",[$field_value]);
                 }
-                
+
+                                
                 return redirect($redir_url);
             } else {
                 return "Error Occured!";

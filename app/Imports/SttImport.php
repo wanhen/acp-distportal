@@ -21,6 +21,7 @@ class SttImport implements ToModel, WithHeadingRow, WithCalculatedFormulas, With
     public $dist_code = null;
     public $report_date = null;
     public $period = null;
+    public $filename = null;
         
     public function model(array $row)
     {
@@ -51,6 +52,7 @@ class SttImport implements ToModel, WithHeadingRow, WithCalculatedFormulas, With
             'unit' => ($row['satuan_terkecil_pcsbtlrencengkgjerigen'] == null ? "" : $row['satuan_terkecil_pcsbtlrencengkgjerigen']),
             'diskon' => ($row['diskon'] == null ? 0 : $row['diskon']),
             'revenue' => ($row['revenue_gross_rp'] == null ? 0 : $row['revenue_gross_rp']),
+            'filename' => $this->filename,
         ]);
     }
 

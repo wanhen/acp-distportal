@@ -64,16 +64,23 @@
                       <tr>
                           <td>{{ $rec->report_date }}</td>
                           <td>{{ $rec->period }}</td>
-                          <td>{{ $rec->filename }} </td>
+                          <td><i class="fa fa-file-excel-o"></i>&nbsp;<a href="{{ url('storage/uploadedfiles/'.$rec->dist_code.'/'.$rec->filename) }}">{{ $rec->filename }}</a> </td>
                           <td>{{ $rec->report_ok }} </td>
                           <td>{{ $rec->created_at }}</td>
-                          <td>{{ $rec->status }}</td>
+                          <td>{{ $rec->status }}  @if ($rec->status == "PENDING")
+                                    <input type="hidden" name="id" id="id" value="{{ $rec->id }}">
+                                    <a href="{{ url("/dataentry/deleteconfirm/?x=".Crypt::encryptString("id=".$rec->id."&t=upload_file&r=/")) }}" class="btn btn-small">Delete</a>
+                                  
+                                @else 
+
+                                @endif
+                                </td>
                       </tr>
                       @endforeach
                   </tbody>
                   <tfoot>
                       <tr>
-                          <td colspan="5">{{ $rec_upload->links() }}<tr>   
+                          <td colspan="6">{{ $rec_upload->links() }}<tr>   
                       </tr>
                   </tfoot>
               </table>

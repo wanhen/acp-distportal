@@ -77,6 +77,7 @@ class UploadController extends Controller
                         $cl->dist_code = $request->dist_code;
                         $cl->report_date = $request->date_report;
                         $cl->period = $request->period;
+                        $cl->filename = $filename;
                         
                         $result = Excel::import($cl, $request->dist_code.'/'.$filename, 'upload');
                     

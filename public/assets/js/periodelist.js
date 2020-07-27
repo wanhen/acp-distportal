@@ -1,14 +1,6 @@
-requirejs( ['jquery','jquery-ui','jquery-confirm','datatables'], function() {
+requirejs( ['jquery','jquery-ui','jquery-confirm'], function() {
 
-    $('#mytable').DataTable({
-        responsive: true,
-        filter: false,
-        paginate: true,        
-        autoWidth: false, 
-        searching: true,
-        info: false,
-        ordering: false               
-      });
+    
     
     $('#btnsave').on('click', function(e)
     {        
