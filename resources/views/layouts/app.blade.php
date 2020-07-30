@@ -162,7 +162,7 @@
                         <a href="{{ url('/datamaster/periode') }}" class="dropdown-item ">Periode</a>
                         <a href="{{ url('/datamaster/distributor') }}" class="dropdown-item ">Distributor</a>
                         <a href="{{ url('/datamaster/item') }}" class="dropdown-item ">Item</a>
-                        <a href="{{ url('/datamaster/itemmapping') }}" class="dropdown-item ">Item Mapping</a>
+                        
                       </div>
                     </li>
                     <li class="nav-item dropdown">

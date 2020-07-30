@@ -63,7 +63,7 @@ class HomeController extends Controller
             ->join('acp_distributor', 'upload_file.dist_code', '=', 'acp_distributor.dist_code')
             // ->where('status','PENDING')
             ->orderBy('upload_file.report_date', 'DESC')
-            ->paginate(10);
+            ->get();
         
         $rec_period = \App\Models\AcpPeriod::where('is_active', 1)
             ->orderBy('period', 'desc')

@@ -17,19 +17,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-control">
-                  <label for="report_type">Select Report Type</label>
-                  <select name="report_type" id="report_type" class="form-control" onchange="alert(this.val())">
-                    <option value="STT">STT Distributor</option>                   
-                  </select>
-              </div>  
-            </div>
-            <div class="col-md-6">
-
-            </div>
-          </div>
+          
           
           <!-- Begin body content -->
           <div class="table-responsive">

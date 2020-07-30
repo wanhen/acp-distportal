@@ -37,7 +37,8 @@ class UploadController extends Controller
             $extension = \File::extension($request->uploaded_file->getClientOriginalName());
             if ($extension == "xlsx" || $extension == "xls" || $extension == "csv" || $extension == "xlsm") {
                 $filename_ori = $request->uploaded_file->getClientOriginalName();
-                $filename = "stt_".date('YmdHis').'.'.$extension;
+                $dist_name = str_slug($request->dist_name,'-');
+                $filename = "stt_".$dist_name."_".$request->period."_".date('YmdHis').'.'.$extension;
 
                 // DB::enableQueryLog(); // Enable query log
                 $rec_file = DB::connection()->table('upload_file')
@@ -50,7 +51,7 @@ class UploadController extends Controller
                 // dd(DB::getQueryLog());
                 if ($rec_file !== null) {
                     // user doesn't exist
-                    Session::flash('error', 'File laporan pada periode di pilih sudah terdaftar dan sudah komplit, silahkan kontak admin apabila ada yang perlu diperbaiki !');
+                    Session::flash('error', 'File laporan pada periode di pilih sudah terdaftar, silahkan kontak admin apabila ada yang perlu diperbaiki !');
                     return back();
                 }
 
@@ -398,6 +399,31 @@ class UploadController extends Controller
             );
 
         return view('upload.fileuploadsttadmin')->with($data);
+
+    }
+
+    public function stt_asps(Request $request)
+    {
+        $rec_dist_all = DB::table('users')->select(DB::raw('dist_code'))->get();
+
+        $rec_distributor = DB::table('acp_distributor')->select(DB::raw('dist_code, dist_name'))
+            ->whereIn('dist_code', $rec_dist_all->toArray())
+            ->get();
+
+        $rec_period = DB::table('acp_period')->select(DB::raw('period as bulan, period'))
+            ->where('is_active', 1)
+            ->orderBy('period', 'desc')
+            ->get();
+
+        $data = array(
+            'page_title'=>'Upload File STT',
+            'Description'=>'Upload File STT',
+            'author'=>'acp',
+            'rec_period' => $rec_period,
+            'rec_distributor' => $rec_distributor,
+            );
+
+        return view('upload.fileuploadsttasps')->with($data);
 
     }
 

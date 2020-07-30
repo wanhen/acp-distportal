@@ -28,13 +28,21 @@ class AccountController extends Controller
                 Session::put('userlevel', $data->userlevel);
                 Session::put('usergroup', $data->usergroup);
                 Session::put('emp_id', $data->emp_id);  
-                Session::put('dist_code', $data->dist_code);
-                Session::put('use_upload', $data->use_upload);  
-                if ($data->distributors) {
-                    Session::put('dist_name',$data->distributors->dist_name);
-                } else {
+                Session::put('use_upload', $data->use_upload);
+                if ($data->userlevel !== 'ADMIN' && $data->userlevel !== 'ASPS')
+                {
+                    if ($data->distributors) {
+                        Session::put('dist_code', $data->dist_code);                
+                        Session::put('dist_name',$data->distributors->dist_name);
+                    } else {
+                        Session::put('dist_code',"");
+                        Session::put('dist_name',"");
+                    }
+                }  else {
+                    Session::put('dist_code',"");
                     Session::put('dist_name',"");
                 }
+                
                 
                                             
                 Session::put('islogin',TRUE);

@@ -68,6 +68,11 @@ class AdminController extends Controller
     {
         return "under construction !";
     }
+
+    public function report()
+    {
+        return "under construction !";
+    }
     
 
     

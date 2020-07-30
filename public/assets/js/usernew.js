@@ -3,7 +3,7 @@ requirejs( ['jquery','jquery-ui','select2','jquery-confirm'], function() {
     $('#dist_code').select2();
 
     $('#userlevel').on('change', function() {
-        // alert($(this).val());
+        alert($(this).val());
         switch($(this).val())
         {
             case "DISTRIBUTOR":                
@@ -11,8 +11,8 @@ requirejs( ['jquery','jquery-ui','select2','jquery-confirm'], function() {
                 break;
             case "ASPS":
                 $('#dist_code').val('').change();
-                $('#dist_code').attr('disabled', true);
-                break;
+                $('#dist_code').removeAttr('disabled');
+                 break;
             case "RSM":
                 $('#dist_code').val('').change();
                 $('#dist_code').attr('disabled', true);

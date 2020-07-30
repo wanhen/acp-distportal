@@ -55,16 +55,12 @@ Route::middleware(['checkadmin'])->group(function () {
 
     // admin 
     Route::get('/admin', 'AdminController@index');    
+    Route::get('/admin/report', 'AdminController@report');  
     Route::post('/admin/approve', 'AdminController@do_validate');
 
     Route::get('/admin/generatedw','AdminController@generate_dw')->name('admin_generate_dw');
     
-    // admin report
-    Route::get('/admin/report', 'ReportController@report_home');
-    Route::get('/admin/report/stt', 'ReportController@report_home_stt');
-    Route::get('/admin/report/stok', 'ReportController@report_home_stok');
-    Route::get('/admin/report/dist', 'ReportController@report_home_dist');
-
+    
     // upload
     Route::get('/upload/sttadmin','UploadController@stt_admin');
     Route::get('/upload/stokadmin','UploadController@stok_admin');

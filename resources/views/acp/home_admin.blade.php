@@ -49,36 +49,29 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="text-wrap p-lg-6">
-
-                        <h2 class="mt-0 mb-4">Selamat Datang di Distributor Portal - ACP - Admin</h2>
-
-                        <div class="row row-card row-deck">
-
+                   
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Pengiriman Laporan Terbaru</h3>
+                                        <h3 class="card-title">Daftar Laporan yang sudah di Upload</h3>
                                     </div>
-                                    <div class="table-responsive">
-                                        <table class="table card-table table-vcenter text-nowrap">
+                                    <div class="card-body">
+                                        <table id="mytable" class="table card-table table-vcenter text-nowrap">
                                             <thead>
-                                                <tr>
-                                                    <th class="w-1">No.</th>
+                                                <tr>                                                    
                                                     <th>Periode</th>
                                                     <th>Jenis Laporan</th>
                                                     <th>Distributor</th>
                                                     <th>Nama File</th>
                                                     <th>Sesuai Format</th>
                                                     <th>Created</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                    <th>Status</th>                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($rec_upload as $rec)
                                                 <tr>
-                                                    <td><span class="text-muted">{{ $rec_upload->firstItem() + ($loop->iteration-1) }}</span></td>
+                                                    
                                                     <td><a href="#" class="text-inherit">{{ $rec->period }}</a></td>
                                                     <td>
                                                         {{ $rec->report_type }}
@@ -86,46 +79,30 @@
                                                     <td>
                                                         {{ $rec->dist_name }}
                                                     </td>
-                                                    <td>{{ $rec->filename }}</td>
+                                                    <td><i class="fa fa-file-excel-o"></i>&nbsp;<a href="{{ url('storage/uploadedfiles/'.$rec->dist_code.'/'.$rec->filename) }}">{{ $rec->filename }}</a></td>
                                                     <td>{{ $rec->report_ok }}</td>
                                                     <td>{{ $rec->created_at }}</td>
                                                     <td>
-                                                        @if ($rec->status == 'SUCCESS')
+                                                        @if ($rec->status == 'APPROVED')
                                                         <span class="status-icon bg-success"></span> {{ $rec->status }}
                                                         @else
                                                         <span class="status-icon bg-warning"></span> {{ $rec->status }}
                                                         @endif
                                                     </td>
 
-                                                    <td class="text-right">
-
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#"><i class="fe fe-maximize"></i>&nbsp;View</a>
-                                                                <a class="dropdown-item" href="{{ route('validate_stt', ['id' => $rec->id]) }}"><i class="fe fe-check-circle"></i>&nbsp;Validate</a>
-
-                                                            </div>
-                                                        </div>
-
-                                                    </td>
-
+                                                   
                                                 </tr>
 
                                                 @endforeach
 
                                             </tbody>
-                                            <tr>
-                                                <td colspan="9">{{ $rec_upload->links() }}</td>
-                                            </tr>
+                                            
                                         </table>
                                     </div>
                                 </div>
                             </div>
 
-                        </div>
-
-                    </div>
+                       
                 </div>
             </div>
 

@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                 <label for="dist_code">Distributor</label>                
-                <select id="dist_code" name="dist_code" class="form-control" placeholder="Select Distributor">
+                <select id="dist_code" name="dist_code[]" multiple="multiple" class="form-control" placeholder="Select Distributor">
                 <option value="">-- PILIH DISTRIBUTOR --</option>
                   @foreach ($rec_dist as $item)
                         <option value="{{ $item->dist_code }}" {!! ($rec_user->dist_code ?? '') == $item->dist_code ? 'selected' : '' !!}>{{ $item->dist_name }} ( {{ $item->dist_code }} )</option>
