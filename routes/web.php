@@ -97,6 +97,7 @@ Route::middleware(['checklogin'])->group(function () {
     Route::post('/datamaster/periode/post', 'DatamasterController@periode_post');
     Route::get('/datamaster/distributor', 'DatamasterController@distributor');
     Route::get('/datamaster/distributoredit/{id?}', 'DatamasterController@distributor_edit');
+    Route::post('/datamaster/distributorpost', 'DatamasterController@distributor_post');
     Route::get('/datamaster/distributorsalestarget/{id?}', 'DatamasterController@distributor_salestarget_list');
     Route::get('/datamaster/distributoritemtarget/{id?}', 'DatamasterController@distributor_itemtarget_list');
     Route::get('/datamaster/item', 'DatamasterController@item');
@@ -150,6 +151,7 @@ Route::middleware(['checklogin'])->group(function () {
     // Upload = boleh di lakukan oleh distributor, admin ACP atauapun ASPS
     Route::get('/upload','UploadController@home');
     Route::get('/upload/stt','UploadController@stt');
+    Route::get('/upload/sttasps','UploadController@stt_asps');
     Route::get('/upload/std','UploadController@std');
 
     Route::post('upload_stt', 'UploadController@upload_stt')->name('upload_stt');

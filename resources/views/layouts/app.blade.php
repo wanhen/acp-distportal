@@ -120,25 +120,26 @@
                     </li>
 
                     @if (in_array('DISTRIBUTOR', explode(",",Session::get('usergroup'))) == true)
-                    <!-- <li class="nav-item dropdown">
+                    @if (Session::get('use_upload') == 0)
+                    <li class="nav-item dropdown">
                       <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'dist') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Master </a>
                       <div class="dropdown-menu dropdown-menu-arrow">
                         <a href="{{ url('/dist/customerlist') }}" class="dropdown-item ">Customer</a>
                         <a href="{{ url('/dist/salesmanlist') }}" class="dropdown-item ">Salesman</a>
                       </div>
-                    </li>                    -->
-                    <!-- <li class="nav-item dropdown">
+                    </li>
+                    <li class="nav-item dropdown">
                       <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'dataentry') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Data Entry </a>
                       <div class="dropdown-menu dropdown-menu-arrow">
-                        @if (Session::get('use_upload') == 0)
                         <a href="{{ url('/dataentry/stttranslist') }}" class="dropdown-item ">Entry STT</a>
-                        @endif 
                         <a href="{{ url('/dataentry/stoklist') }}" class="dropdown-item ">Entry Stok</a>
                       </div>
-                    </li> -->
+                    </li>
+                    @else
                     <li class="nav-item ">
                       <a href="{{ url('/upload/stt') }}" class="nav-link @if (Request::segment(1) == 'upload') active @endif"><i class="fe fe-arrow-up-circle"></i> Upload </a>
                     </li>
+                    @endif
                     <!-- <li class="nav-item dropdown">
                       <a href="javascript:void(0)" class="nav-link @if (Request::segment(2) == 'report') active @endif" data-toggle="dropdown"><i class="fe fe-book-open"></i> Laporan</a>
                       <div class="dropdown-menu dropdown-menu-arrow">                        
@@ -155,6 +156,13 @@
                       </div>
                     </li> -->
                     @endif
+
+                    @if (in_array('ASPS', explode(",",Session::get('usergroup'))) == true)
+                    <li class="nav-item ">
+                      <a href="{{ url('/upload/sttasps') }}" class="nav-link @if (Request::segment(1) == 'upload') active @endif"><i class="fe fe-arrow-up-circle"></i> Upload </a>
+                    </li>
+                    @endif
+
                     @if (in_array('ADMIN', explode(",",Session::get('usergroup'))) == true)
                     <li class="nav-item dropdown">
                       <a href="javascript:void(0)" class="nav-link @if (Request::segment(1) == 'datamaster') active @endif" data-toggle="dropdown"><i class="fe fe-check-circle"></i> Data Master </a>

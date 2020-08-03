@@ -225,7 +225,15 @@ class AccountController extends Controller
         // $data->password = bcrypt($request->password);
         $data->userlevel = $request->userlevel;
         $data->usergroup = $request->userlevel;
-        $data->dist_code = $request->dist_code;        
+        $dist_code_array = "";
+        
+        foreach ($request->dist_code as $arr1) {
+            $dist_code_array .= $arr1.",";
+        }
+       
+        $dist_code_array = substr($dist_code_array,0, strlen($dist_code_array) -1);
+        $data->dist_code = $dist_code_array; 
+        $data->use_upload = $request->use_upload;       
         $data->created_by = Session::get('username');        
         $data->save();
 

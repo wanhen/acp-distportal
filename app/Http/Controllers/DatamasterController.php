@@ -52,7 +52,7 @@ class DatamasterController extends Controller
             if ($tmprec === null) {
                 $data =  new \App\Models\AcpPeriod();
             } else {
-                $data = null;
+                $data = $tmprec;
             }
     
            
@@ -96,11 +96,13 @@ class DatamasterController extends Controller
     
             // check if username exists
             $tmprec =  \App\Models\AcpDistributor::where('id', '=', $request->id)->first();
+            
             if ($tmprec === null) {
-                $data =  new \App\Models\AcpDistributor();
+                $data =  new \App\Models\AcpDistributor();                
             } else {
-                $data = null;
+                $data = $tmprec;               
             }
+            
             $data->dist_code = ($request->dist_code ?? '');
             $data->dist_name = ($request->dist_name ?? '');
             $data->address = ($request->address ?? '');
@@ -109,7 +111,7 @@ class DatamasterController extends Controller
             $data->regional = ($request->regional ?? '');
             $data->area = ($request->area ?? '');
             $data->asps = ($request->asps ?? '');
-            $data->report_date = ($request->report_date ?? '');
+            $data->report_date = ($request->report_date ?? null);
             $data->phone = ($request->phone ?? '');
             $data->email = ($request->email ?? '');
             $data->pic = ($request->pic ?? '');
@@ -125,6 +127,8 @@ class DatamasterController extends Controller
             $rec = array(                 
                 'menu' => 'distributor',
                 'url_back' => '/datamaster/distributor',
+                'url_new' => '/datamaster/distributor',
+                
             );
             return view('messages.savesuccess')->with($rec);
         }

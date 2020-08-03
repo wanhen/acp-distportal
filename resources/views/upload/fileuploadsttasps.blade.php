@@ -60,7 +60,7 @@
                 <div class="form-group">
                   <label class="col-md-12 control-label" for="cust_name">Distributor</label>
                   <div class="col-md-12">
-                    <select name="dist_code" id="dist_code" class="form-control">
+                    <select name="dist_code" id="dist_code" class="form-control">                        
                         @foreach ($rec_distributor as $rd)
                             <option value="{{ $rd->dist_code }}">{{ $rd->dist_name }}</option>
                         @endforeach
